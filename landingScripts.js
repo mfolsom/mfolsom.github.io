@@ -1,5 +1,5 @@
 function UATSpaceTrans(){
-    location.replace("UATSpace.html");
+    location.replace("uatpace.html");
 }
 
 function ObjectiveTrans(){
