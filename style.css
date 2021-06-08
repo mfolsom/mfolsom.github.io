@@ -1,0 +1,81 @@
+body {
+    background-color: #fcfdfc;
+    color: #393a3d;
+}
+
+#countdownTimer {
+    color: #a90e27;
+    font-size: xx-large;
+}
+
+.startButton {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 10px 45px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.stopButton {
+    background-color: #f44336;
+    /* Red */
+    border: none;
+    color: white;
+    padding: 10px 45px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.startButton:hover:enabled {
+    background-color: rgb(9, 58, 42);
+}
+
+.stopButton:hover:enabled {
+    background-color: rgb(78, 9, 9);
+}
+
+#data {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+#data td, #data th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#data tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#data tr:hover {
+    background-color: #ddd;
+}
+
+#data th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+.button {
+    background-color:burlywood;
+    border: none;
+    color: white;
+    padding: 10px 45px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+}

@@ -1,0 +1,28 @@
+<DOCTYPE <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>UAT Space Login Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+        <script src="loginCode.js"></script>
+    </head>
+
+    <body>
+        <h1>Welcome to the UAT Space Login Page. Please Log in.</h1>
+        <p id="loginStatus">Status of Login</p>
+        <form id="creditSubmit" onsubmit="return false">
+            First Name:
+            <input type="text" id="fName" />
+            <br> Last Name:
+            <input type="text" id="lName" />
+            <br> Badge Number:
+            <input type="number" id="badgeId" />
+            <br>
+            <input class="startButton" type="submit" onclick="checkCreds();" />
+        </form>
+    </body>
+
+    </html>
