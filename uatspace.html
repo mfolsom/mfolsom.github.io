@@ -30,10 +30,13 @@ June 2, 2021-->
             theTime = new Date();
             //fill in table
             var timeRead = data[index].time_seconds;
+            //replace contents of each row with data from rawn data once 10 seconds have elapsed
             if (timeRead > 10) {
-                //document.getElementById("data").rows["seconds"].innerHTML = dataRow("Time Elapsed", data[index].time_seconds, "seconds");
+                //get the seconds row and replace null data with data from dataloader
                 document.getElementById("data").rows["seconds"].innerHTML = dataRow("Time Elapsed", data[index].time_seconds, "seconds");
+                //get the latitude row and replace null data with data from dataloader
                 document.getElementById("data").rows["latitude"].innerHTML = dataRow("Latitude", data[index].latitude, " ");
+                //etc...
                 document.getElementById("data").rows["longitude"].innerHTML = dataRow("Longitude", data[index].longitude, " ");
                 document.getElementById("data").rows["gps_altitude"].innerHTML = dataRow("GPS Altitude", data[index].gps_altitude, " ");
                 document.getElementById("data").rows["bmpSensor_altitude"].innerHTML = dataRow("BMP Sensor Altitude", data[index].bmpSensor_altitude, " ");
@@ -55,11 +58,13 @@ June 2, 2021-->
                 document.getElementById("data").rows["gyroZ"].innerHTML = dataRow("Gyro Z", data[index].gyroZ, " ");
 
             }
+            //set index and counter for raw data
             if (index < 499) {
                 index++;
             } else {
                 index = 0;
             }
+            //display timer
             document.getElementById("time").innerHTML =
                 (theTime.getHours() < 10 ? "0" + theTime.getHours() : theTime.getHours()) +
                 ":" + (theTime.getMinutes() < 10 ? "0" + theTime.getMinutes() : theTime.getMinutes()) +
@@ -74,14 +79,26 @@ June 2, 2021-->
     <!-- making a table to hold h1 title and jpg-->
     <table>
         <thead>
-                <th><img src='UATspaceLogo-2.jpg' /></th>
-                <th> <h1>UAT Space Program</h1></th>
-            </thead>
-       <tr><td><button class="button" onclick="IndexTrans();">Home</button></td><td>  <button class="button" onclick="ObjectiveTrans();">Objectives</button></td></tr>
+            <th>
+                <img src='UATspaceLogo-2.jpg' />
+            </th>
+            <th>
+                <h1>UAT Space Program</h1>
+            </th>
+        </thead>
+        <tr>
+            <td>
+                <button class="button" onclick="IndexTrans();">Home</button>
+            </td>
+            <td>
+                <button class="button" onclick="ObjectiveTrans();">Objectives</button>
+            </td>
+        </tr>
 
     </table>
     <br>
     <br>
+    <!--data table for sensor data inputs-->
     <table id="data">
         <col style="width: 35%;">
         <col style="width: 35%;">
@@ -90,6 +107,7 @@ June 2, 2021-->
             <th>Reading</th>
         </thead>
         <tbody>
+            <!--table row shells to receive sensor data inputs-->
             <tr id="seconds"></tr>
             <tr id="latitude"></tr>
             <tr id="longitude"></tr>
@@ -115,22 +133,20 @@ June 2, 2021-->
         </tbody>
     </table>
     <br>
+    <!--button to start data load and display-->
     <button class="startButton" id="startButton" onclick="start();">Start</button>
+    <!--button to stop data load and display-->
     <button class="stopButton" id="stopButton" onclick="stop();">Stop</button>
     <br>
     <br> The time is:
     <div id="time"></div>
-
-    <!-- <script>
-        //Javascript Stuff should happen here
-        document.write("document.write function test");
-    </script>
-    <p>Paragraph Tag Placeholder Text</p> -->
     <br>
     <br>
     <br>
     <p id="countdownTimer">Countdown Status ...</p>
+    <!--button to start countdown-->
     <button class="startButton" onclick="betterCountdown();">Start</button>
+    <!--button to stop countdown currently not wired up to anything-->
     <button class="stopButton">Stop</button>
     <br>
     <br>
